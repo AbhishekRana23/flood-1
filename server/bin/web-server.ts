@@ -29,7 +29,8 @@ const normalizePort = (val: string | number): string | number => {
 };
 
 const startWebServer = () => {
-  const port = normalizePort(config.floodServerPort);
+  const pp = process.env.PORT || config.floodServerPort;
+  const port = normalizePort(pp);
   const host = config.floodServerHost;
   const useSSL = config.ssl ?? false;
 
